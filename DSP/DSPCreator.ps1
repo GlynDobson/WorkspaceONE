@@ -6,12 +6,12 @@ $buildFolder = "c:\WindowsImage"
 
 #Connection to UEM API
 $acces_token_url = "https://na.uemauth.vmwservices.com/connect/token"
-$APIClientID = "4d905e946a554425b0d9948ff7785aec"
-$APIClientSecret = "8017BE1BACD3E2E53EAEF967FBAF659A"
-$apiServer = "as2063"
+$APIClientID = "xxx"
+$APIClientSecret = "xxx"
+$apiServer = "asxxxx"
 
 #UEM confiuration for where the device should go
-$OGID = "7376FABC-F6CD-434B-B9CA-55D5BD8739F6" #Windows: 7376FABC-F6CD-434B-B9CA-55D5BD8739F6
+$OGID = "7376FABC-F6CD-434B-B9CA-55D5BD8739F6" #Fomat: 7376FABC-F6FF-324B-B9CA-55D5BD8739F6
 $tag = "DSPOnlineNew"
 $ownership = "CorporateDedicated"
 #*****************************************
