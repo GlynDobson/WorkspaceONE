@@ -19,7 +19,7 @@ Deploymnt:
 
 Update DSPCreater.ps1 file as follows:
 
-*Set the value of **$buildFolder** to a temporaty location on your computer what will be used to build the Windows image
+* Set the value of **$buildFolder** to a temporaty location on your computer what will be used to build the Windows image
 * Set the value of **$acces_token_url** to the approprate datacenter URL as published here: https://docs.omnissa.com/bundle/WorkspaceONE-UEM-Console-BasicsVSaaS/page/UsingUEMFunctionalityWithRESTAPI.html#datacenter_and_token_urls_for_oauth_20_support
 * Set the value of **$APIClientID** to the oAuth Client ID
 * Set the value of **$APIClientSecret** to the oAuth Client Secret
