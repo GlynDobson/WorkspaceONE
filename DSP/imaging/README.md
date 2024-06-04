@@ -29,7 +29,7 @@ Update DSPCreater.ps1 file as follows:
 * Set the value of **$tag** to the name of the tag to be applied to the device. This is the tag created above that is assgigned to the Smart Group where the Domain configuration is assigned.
 * Update the value of **$ownership** if required. Typcaily this will not need to be changed.
 
-With the USB drive connected, CD to the location of the file and run DSPCreater.ps1. The process will do the following:
+With the USB drive connected, open a PS session, change to the location of the files and run DSPCreater.ps1. The process will do the following:
 * Formats the USB drive
 * Mounts the ISO to a virtual DVD drive
 * Copies all files from the ISO to the USB drive
