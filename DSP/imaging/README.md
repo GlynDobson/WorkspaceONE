@@ -5,7 +5,7 @@ Use this set of script to re-image a device with a fresh Windows install and hav
 
 Requirements:
 
-* Windows iso.
+* Windows ISO.
 * USB stick where the mofified ios image will be deployed to.
 * Dropship-GenericPPKG-ProvTool package available from my.workspaceone.com. At time of writing, this is Dropship-GenericPPKG-ProvTool3.4.zip
 * An oAuth client for use with the API's. This is used to register the devices serial number with the UEM Tenant and target OG. Reference: https://docs.omnissa.com/bundle/WorkspaceONE-UEM-Console-BasicsVSaaS/page/UsingUEMFunctionalityWithRESTAPI.html#create_an_oauth_client_to_use_for_api_commands_saas
@@ -28,3 +28,19 @@ Update DSPCreater.ps1 file as follows:
 * Set the value of **$tag** to the name of the tag to be applied to the device. This is the tag created above that is assgigned to the Smart Group where the Domain configuration is assigned.
 * Update the value of **$ownership** if required. Typcaily this will not need to be changed.
 
+With the USB drive connected, CD to the location of the file and run DSPCreater.ps1. The process will do the following:
+* Formats the USB drive
+* Mounts the ISO to a virtual DVD drive
+* Copies all files from the ISO to the USB drive
+* Dismounts the ISO file
+* Extracts the install.wim file for the Enterprise version of Windows to the temporary folder in $buildFolder (this is the Windows image that will be applied to the device)
+* Adds the Workspace ONE PPKG files to the to the windows image folder
+* Updates the standard PPGK files to trigger a reboot instead of a shut down
+* Adds the unatend.xml file to the windows panther folder
+* Updates DSP_Register.ps1 with the specified API endpoint URL and credentials
+* Applies the updates to the install.wim image
+* Specifies the version of windows to install as the Enterprise edition
+* Ejects the USB drive
+
+Imaging process
+* dd
