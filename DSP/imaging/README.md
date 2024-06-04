@@ -27,11 +27,12 @@ In the same folder, place the Generic PPKG package zip file and a copy of the Wi
 
 Update DSPCreater.ps1 file as follows:
 
-Set the value of **$buildFolder** to a temporaty location on your computer what will be used to build the Windows image
-Set the value of **$acces_token_url** to the approprate datacenter URL as published here: https://docs.omnissa.com/bundle/WorkspaceONE-UEM-Console-BasicsVSaaS/page/UsingUEMFunctionalityWithRESTAPI.html#datacenter_and_token_urls_for_oauth_20_support
+> Set the value of **$buildFolder** to a temporaty location on your computer what will be used to build the Windows image
+* Set the value of **$acces_token_url** to the approprate datacenter URL as published here: https://docs.omnissa.com/bundle/WorkspaceONE-UEM-Console-BasicsVSaaS/page/UsingUEMFunctionalityWithRESTAPI.html#datacenter_and_token_urls_for_oauth_20_support
 Set the value of **$APIClientID** to the oAuth Client ID
 Set the value of **$APIClientSecret** to the oAuth Client Secret
 Set the value of **$apiServer** to the name of the API server. This can be found under Site URLs and is listed as the value for **REST API URL**. Reference: https://docs.omnissa.com/bundle/SystemSettingsVSaaS/page/SiteURLsforWorkspaceONE.html
 Set the value of **$OGID** to the GUID for the OG where the device should be enrolled
 Set the value of **$tag** to the name of the tag to be applied to the device. This is the tag created above that is assgigned to the Smart Group where the Domain configuration is assigned.
 Update the value of **$ownership** if required. Typcaily this will not need to be changed.
+
