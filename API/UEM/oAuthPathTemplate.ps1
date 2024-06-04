@@ -21,7 +21,7 @@ $oAuthbody = @{
    $headers.Add("Accept", 'application/json')
    $headers.Add("content-type", 'application/json')
 
-   $URI = "https://asxxx.awmdm.com/api/mdm/devices/search"
+   $URI = "https://asxxx.awmdm.com/api/mdm/devices/search?platform=Android"
    $response = Invoke-WebRequest -Uri $URI -Headers $headers -Method get
    ($response.Content | ConvertFrom-Json).devices
 }
