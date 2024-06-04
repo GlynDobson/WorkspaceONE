@@ -7,6 +7,7 @@ Requirements:
 
 * Windows ISO.
 * USB stick where the mofified ios image will be deployed to.
+* Dropship Provisioning Online configured at the OG where devices should be placed: Reference: https://docs.omnissa.com/bundle/workspace_one_drop_ship_provisioningV2310/page/DSPOnlineInfo.html
 * Dropship-GenericPPKG-ProvTool package available from my.workspaceone.com. At time of writing, this is Dropship-GenericPPKG-ProvTool3.4.zip
 * An oAuth client for use with the API's. This is used to register the devices serial number with the UEM Tenant and target OG. Reference: https://docs.omnissa.com/bundle/WorkspaceONE-UEM-Console-BasicsVSaaS/page/UsingUEMFunctionalityWithRESTAPI.html#create_an_oauth_client_to_use_for_api_commands_saas
 * If the device is to be joined to an AD domain, create the Domain Join configutation. Reference: https://docs.omnissa.com/bundle/Windows_Desktop_ManagementV2306/page/uemWindeskDomainJoin.html#on_premises_domain_join
@@ -24,7 +25,7 @@ Update DSPCreater.ps1 file as follows:
 * Set the value of **$APIClientID** to the oAuth Client ID
 * Set the value of **$APIClientSecret** to the oAuth Client Secret
 * Set the value of **$apiServer** to the name of the API server. This can be found under Site URLs and is listed as the value for **REST API URL**. Reference: https://docs.omnissa.com/bundle/SystemSettingsVSaaS/page/SiteURLsforWorkspaceONE.html
-* Set the value of **$OGID** to the GUID for the OG where the device should be enrolled
+* Set the value of **$OGID** to the GUID for the OG where the device should be enrolled. This is obtained from the Drop Ship Provisioning configuration screen. 
 * Set the value of **$tag** to the name of the tag to be applied to the device. This is the tag created above that is assgigned to the Smart Group where the Domain configuration is assigned.
 * Update the value of **$ownership** if required. Typcaily this will not need to be changed.
 
@@ -43,4 +44,9 @@ With the USB drive connected, CD to the location of the file and run DSPCreater.
 * Ejects the USB drive
 
 Imaging process
-* dd
+* Boot device using UBS stick.
+* unantend.xml boots the device into audit mode and triggers execution of DSP_Register.ps1 which registeres the device serial number to the UEM tenant.
+* RunPPKGandXML.bat is then launched which stages the Generic PPKG package.
+* Device reboots and automatically logs in using a staging account called workspaceone.
+* Workspace ONE provisioning agent is relaunched, the device is enrolled into WS1 as a staging account and resources are applied to the device.
+* Once provisioning is complete, the device can be shut down and given to the end user.
