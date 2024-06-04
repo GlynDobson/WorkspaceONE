@@ -50,3 +50,4 @@ Imaging process
 * Device reboots and automatically logs in using a staging account called workspaceone.
 * Workspace ONE provisioning agent is relaunched, the device is enrolled into WS1 as a staging account and resources are applied to the device.
 * Once provisioning is complete, the device can be shut down and given to the end user.
+* When the end user logs in, the device is reassigned from the staging account (staging-cp-{OG})to the end user.
