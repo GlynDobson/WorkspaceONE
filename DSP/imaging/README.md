@@ -1,7 +1,7 @@
 <h1>Windows device lifecycle</h1>
 <h2>Automated reprovisioning of devices using Workspace ONE</h2>
 
-Use this set of script to re-image a device with a fresh Windows install and have the device automatically enroll into Workspace ONE and join the domain.
+Use this set of scripts to re-image a device with a fresh Windows install and have the device automatically enroll into Workspace ONE and join the domain.
 
 Requirements:
 
